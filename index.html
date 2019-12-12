@@ -1,358 +1,252 @@
-﻿
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Joint Workshop on Efficient Deep Learning in Computer Vision</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Joint Workshop on Efficient Deep Learning in Computer Vision</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-  <link href="EDLCVatCVPR2020/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css' />
+    <link href="EDLCVatCVPR2020/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body> 
+<body>
 
-<div class="container">
-  <table border="0" align="center">
-    <tr>
-      <td width="700" align="center" valign="middle"><h4>4<sup>th</sup> International Workshop on</h4>
-      <span class="title">Joint Workshop on Efficient Deep Learning in Computer Vision</span></td>
-    </tr>
-    <tr>
-        <td colspan="3" align="center"><h4>in conjunction with CVPR 2020<br>Seattle, United States, June 16~June 21 2020</h4></td>
-    </tr>
-    <tr><td>
-      <p><img src="EDLCVatCVPR2020/figures/CVPR2020.jpg" width="1000" align="middle" /></p>
-  </td></tr>
-  </table>
-</div>
-
-</br>
-
-<div class="container">
-    <div class="overview">
-    <p>Feature representation is at the core of many computer vision and pattern recognition applications such as image classification, object detection, image and video retrieval, image matching and many others. For years, milestone engineered feature descriptors such as SIFT, SURF, HOG and LBP have dominated various domains of computer vision. The design of feature descriptors with low computational complexity has gained lots of attention and a number of efficient descriptors including BRIEF, FREAK, BRISK and DAISY have been presented. In the past few years we have witnessed significant progress in feature representation and learning. The popularity of traditional handcrafted features seems to be overtaken by the Deep Convolutional Neural Networks (DeepCNNs), which can learn powerful features automatically from data and have brought about breakthroughs in various problems in computer vision. However, these advances rely on deep networks with millions or even billions of parameters, and the availability of GPUs with very high computation capability and large scale labeled datasets plays a key role in their success. In other words, powerful DeepCNNs are data hungry and energy hungry.</p>
-    <p>Nowadays, given the exponentially increasing number of images and videos, the emerging phenomenon of big dimensionality exposes the inadequacies of existing approaches, no matter whether traditional handcrafted features or recent deep learning-based ones. Thus, there is a pressing need for new scalable and efficient approaches that can cope with this explosion of dimensionality.</p>
-    <p>In addition, with the prevalence of social media networks and the portable / mobile / wearable devices to access them, comes the current concern of the limited resources (<i>e.g.</i>, battery life, memory, storage space, computational power, and bandwidth) these offer. The demands on sophisticated portable / mobile / wearable device applications in handling large-scale visual data is rising. In such applications, real time performance is of the utmost importance to users, since no one is willing to spend any time waiting nowadays. Therefore, there is a growing need for feature descriptors that are fast to compute, memory efficient, and that yet exhibit good discriminability and robustness.</p>
-    <p>Given sufficient annotated data, existing features - especially those produced by deep CNNs - have yielded good performance. Nonetheless, there are many applications where only limited amounts of annotated training data can be gathered (such as with many visual inspection or medical diagnostics tasks). Such applications are challenging for many existing feature representations, and require sample-efficient techniques to learn good representations.</p>
-    <p>A number of efforts, such as compact binary features, DCNN network quantization and compression, energy efficient network architectures, binary hashing techniques and data efficient techniques like meta learning, have appeared at top conferences (including CVPR, ICCV, ECCV, NIPS and ICLR) and top journals (including TPAMI and IJCV). The workshop aims at stimulating computer vision researchers to discuss the next steps in this important research area.</p>
+    <div class="container">
+        <table border="0" align="center">
+            <tr>
+                <td width="700" align="center" valign="middle">
+                    <span class="title">Joint Workshop on Efficient Deep Learning in Computer Vision<br />CVPR Workshop, 2020</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p><img src="EDLCVatCVPR2020/figures/CVPR2020.jpg" width="1000" align="middle" /></p>
+                </td>
+            </tr>
+        </table>
     </div>
-</div>
 
-<br> 
+    </br>
 
-<div class="container">
-  <h2 align='center'>Important Dates(Tentative)</h2>
-  <table border="2" align="center">
-    <tr>
-      <td width="300"><htable>Event</htable></td> <td width="300"><htable>Date</htable></td>
-    </tr>
-    <tr>
-      <td>Paper Submission Deadline</td><td><strike>July 30</strike> <strong>August 7, 2019</strong></td>
-    </tr>
-    <tr>
-      <td>Notification of Acceptance</td><td><strong>August 25, 2019</strong></td>
-    </tr>
-    <tr>
-      <td>Camera-ready due</td><td><strong>August 30, 2019</strong></td>
-    </tr>
-    <tr>
-      <td>Workshop (Full day)</td><td><strike>October 27</strike> <strong>November 2, 2019</strong></td>
-    </tr>
-  </table>
-  <p></p>
-  <p></p>
-</div>
-
-</br>
-
-<div class="container">
-  <h2>Topics</h2>
-    <div class="topic">
-    <p>We encourage researchers to study and develop new feature representations that are fast to compute, memory efficient, and data efficient, while exhibiting good discriminability and robustness. We also encourage the presentation of new theories and applications related to feature representation and learning for dealing with these challenges. We are soliciting original contributions that address a wide range of theoretical and practical issues including, but not limited to:</p>
-    <p>1. New features (handcrafted features, lightweight network architectures, deep model compression/quantization, and feature learning in supervised, weakly supervised or unsupervised way) that are fast to compute, memory efficient and suitable for large scale problems;</p>
-    <p>2. New compact and efficient features that are suitable for wearable devices (<i>e.g.</i>, smart glasses, smart phones, smart watches) with strict requirements for computational efficiency and low power consumption;</p>
-    <p>3. Hashing/binary codes learning and its related applications in different domains, <i>e.g.</i>, content-based retrieval;</p>
-    <p>4. Evaluations of current traditional descriptors and features learned by deep learning;</p>
-    <p>5. Hybrid methods combining strengths of handcrafted and learning based approaches;</p>
-    <p>6. Sample-efficient feature learning methods, <i>e.g.</i>, meta learning, few shot learning;</p>
-    <p>7. New applications of existing features in different domains, <i>e.g.</i>, medical domain.</p>
+    <div class="container">
+        <div class="overview">
+            <h1>1.TECHNICAL INFORMATION</h1>
+            <h2>Workshop title</h2>
+            <p><strong>Workshop on Efficient Deep Learning for Computer Vision</strong></p>
+            <h2>Duration</h2>
+            <p><strong>Full day: June 15, 2020</strong></p>
+            <h2>Topics</h2>
+            <p>Computer Vision has a long history of academic research, and recent advances in deep learning have provided significant improvements in the ability to understand visual content. As a result of these research advances on problems such as object classification, object detection, and image segmentation, there has been a rapid increase in the adoption of Computer Vision in industry; however, mainstream Computer Vision research has given little consideration to speed or computation time, and even less to constraints such as power/energy, memory footprint and model size. The workshop has three main goals on solving and discussing efficiency in Computer Vision:</p>
+            <p>First, the workshop aims to create a venue for a consideration of the new generation of problems that arise as Computer Vision meets mobile and AR/VR systems constraints, to bring together researchers, educators and practitioners who are interested in techniques as well as applications of compact, efficient neural network representations. The workshop discussions will establish close connection between researchers in machine learning and computer vision communities and engineers in industry, and to benefit both academic researchers as well as industrial practitioners. </p>
+            <p>Second, the workshop aims at reproducibility and comparability of methods for compact and efficient neural network representations, and on-device machine learning. Thus a set of benchmarking tasks (image classification, visual question answering) will be provided together with defined data sets, in order to compare the performance of neural network compression methods on the same networks. Submissions are encouraged (but not required) to use these tasks and data sets in their work. Also, contributors are encouraged to make their code available.</p>
+            <p>Third, the workshop aims to discuss the next steps in developing efficient feature representations from three aspects: energy efficient, label efficient, and sample efficient. Despite DNNs are brain-inspired and can achieve or even surpass human-level performance on a variety of challenging computer vision tasks, they continue to trail humans’ abilities in many aspects, such as high energy-efficiency and the ability to perform low-shot learning (learning novel concepts from very few examples). Therefore, the next generation of feature representation and learning techniques should aim to tackle recognition tasks with significantly reduced computational complexity, using as little training data as people need, and to generalize to a range of different tasks beyond the one task the model was trained on. </p>
+            <h3>Particular topics that will be covered</h3>
+            <ul>
+                <li><strong>Mobile and AR/VR Applications</strong></li>
+                <ul>
+                    <li>Novel mobile and AR/VR applications using Computer Vision such as image processing (e.g. style transfer, body tracking, face tracking) and augmented reality</li>
+                    <li>oLearning efficient deep neural networks under memory and computation constraints for on-device applications</li>
+                </ul>
+                <li><strong>Efficient Neural Network and Architecture Search</strong></li>
+                <ul>
+                    <li>Compact and efficient neural network architecture for mobile and AR/VR devices</li>
+                    <li>Hardware (latency, energy) aware neural network architectures search, targeted for mobile and AR/VR devices</li>
+                    <li>Efficient architecture search algorithm for different vision tasks (detection, segmentation etc.)</li>
+                    <li>Optimization for Latency, Accuracy and Memory usage, as motivated by embedded devices</li>
+                </ul>
+                <li><strong>Neural Network Compression</strong></li>
+                <ul>
+                    <li>Model compression (sparsification, binarization, quantization, pruning, thresholding and coding etc.) for efficient inference with deep networks and other ML models</li>
+                    <li>Scalable compression techniques that can cope with large amounts of data and/or large neural networks (e.g., not requiring access to complete datasets for hyperparameter tuning and/or retraining)</li>
+                    <li>Hashing (Binary) Codes Learning</li>
+                </ul>
+                <li><strong>Low-bit Quantization Network and Hardware Accelerators</strong></li>
+                <ul>
+                    <li>Investigations into the processor architectures (CPU vs GPU vs DSP) that best support mobile applications</li>
+                    <li>Hardware accelerators to support Computer Vision on mobile and AR/VR platforms</li>
+                    <li>Low-precision training/inference & acceleration of deep neural networks on mobile devices</li>
+                </ul>
+                <li><strong>Dataset and benchmark</strong></li>
+                <ul>
+                    <li>Open datasets and test environments for benchmarking inference with efficient DNN representations</li>
+                    <li>Metrics for evaluating the performance of efficient DNN representations</li>
+                    <li>Methods for comparing efficient DNN inference across platforms and tasks</li>
+                </ul>
+                <li><strong>Label/sample/feature efficient learning</strong></li>
+                <ul>
+                    <li>Label Efficient Feature Representation Learning Methods, e.g. Unsupervised Learning, Domain Adaptation, Weakly Supervised Learning and SelfSupervised Learning Approaches</li>
+                    <li>Sample Efficient Feature Learning Methods, e.g. Meta Learning</li>
+                    <li>Low Shot learning Techniques</li>
+                    <li>New Applications, e.g. Medical Domain</li>
+                </ul>
+            </ul>
+        </div>
     </div>
-</div>
 
-</br>
+    <br />
 
-<div class="container">
-  <h2>Invited Speakers</h2>
-    <div>
-      <table align="center">
-        <td width="250", valign="top">
-      <div class="instructor">
-        <a href="http://www.cs.cornell.edu/~rdz/index.htm">
-            <div class="instructorphoto"><img width="200" src="EDLCVatCVPR2020/figures/ramin.png"></div>
-            <div>Professor Ramin Zabih<br>the Cornell Tech, the United States</div>
-        </a>
-      </div>
-        </td>
-
-        <td width="250", valign="top">
-      <div class="instructor">
-          <a href="http://jifengdai.org" >
-        <div class="instructorphoto"><img width="200" src="EDLCVatCVPR2020/figures/jifeng.png"></div>
-        <div>Jifeng Dai<br>SenseTime Group Ltd</div>
-        </a>
-      </div>
-        </td>
-
-        <td width="250", valign="top">
-      <div class="instructor">
-        <a href="http://www.cbsr.ia.ac.cn/users/liangwang/">
-            <div class="instructorphoto"><img width="200" src="EDLCVatCVPR2020/figures/liang.jpg"></div>
-            <div>Professor Liang Wang<br>Institute of Automation, Chinese Academy of Sciences, China</div>
-        </a>
-      </div>
-        </td>
-      </table>
-
+    <div class="container" text-align="left">
+        <div class="overview">
+            <h1>2.ORGANIZERS AND SPEAKERS</h1>
+            <h2>Organizers</h2>
+                <ul>
+                    <li><strong>Li Liu,</strong> Assistant Professor, University of Oulu, Finland</li>
+                    <p>li.liu@oulu.fi</p>
+                    <li><strong>Yu Liu,</strong> Postdoc researcher at KU Leuven</li>
+                    <p>yu.liu@esat.kuleuven.be</p>
+                    <li><strong>Wanli Ouyang,</strong> Senior lecturer, University of Sydney</li>
+                    <p>wanli.ouyang@sydney.edu.au</p>
+                    <li><strong>Jiwen Lu,</strong> Associate Professor, Tsinghua University, China</li>
+                    <p>lujiwen@tsinghua.edu.cn</p>
+                    <li><strong>Matti Pietikäinen,</strong> Professor University of Oulu</li>
+                    <p>mkp@ee.oulu.fi</p>
+                    <li><strong>Luc Van Gool,</strong> Professor, ETH Zurich</li>
+                    <p>vangool@vision.ee.ethz.ch</p>
+                    <li><strong>Peter Vajda,</strong> Research Scientist Manager at Facebook</li>
+                    <p>vajdap@fb.com</p>
+                    <li><strong>Peizhao Zhang,</strong> Research Scientist at Facebook</li>
+                    <p>stzpz@fb.com</p>
+                    <li><strong>Pete Warden,</strong> Staff Research Engineer at Google</li>
+                    <p>petewarden@google.com</p>
+                    <li><strong>Kurt Keutzer,</strong> Professor at UC Berkeley</li>
+                    <p>kurt.keutzer@gmail.com</p>
+                    <li><strong>Jonathan Dekhtiar,</strong> Deep Learning Engineer, Nvidia, Israel</li>
+                    <p>jdekhtiar@nvidia.com</p>
+                    <li><strong>Wojciech Samek,</strong> Fraunhofer Heinrich Hertz Institute, Germany</li>
+                    <p>wojciech.samek@hhi.fraunhofer.de</p>
+                    <li><strong>Yingyan Lin,</strong> Rice University, US</li>
+                    <p>yingyan.lin@rice.edu</p>
+                    <li><strong>Werner Bailer,</strong> Joanneum Research, Austria</li>
+                    <p>werner.bailer@joanneum.at</p>
+                </ul>
+            <h2>Invited Speakers</h2>
+            <ul>
+                <li><strong>Prof. Song Han,</strong> Assistant Professor at MIT</li>
+                <li><strong>Prof. Philip Torr,</strong> University of Oxford, the United Kingdom</li>
+                <li><strong>Prof. Bill Dally,</strong> Stanford University</li>
+                <li><strong>Prof. Nic Lane,</strong> Oxford and Program Director Samsung AI Center, Cambridge</li>
+                <li><strong>Prof. Diana Marculescu,</strong> CMU</li>
+                <li><strong>Prof. Chelsea Finn,</strong> Stanford University</li>
+            </ul>
+        </div>
     </div>
-    <p></p> 
-</div>   
 
-<div class="container">
-    <div class="overview">
-      <p><strong>(1) Professor Ramin Zabih (Confirmed) (</strong><i>Email:</i> <strong>rdz@cs.cornell.edu)</strong></p>
-    <p>Ramin Zabih received undergraduate degrees from MIT in computer science and math, and the PhD degree from Stanford in computer science. He is a professor of computer science at Cornell University at Cornell NYC Tech. He and the students developed graph cut methods for computer vision that have been widely used in both academia and industry. He received the Helmholtz Prize at ICCV in 2013, the Koenderink prize at ECCV in 2012, and Best Paper Awards at ECCV in 2002. He was a program chair for CVPR in 2007 and a general chair for CVPR in 2013, and will be a general chair for ECCV in 2018. He served as an editor-in-chief of the IEEE Transactions on Pattern Analysis and Machine Intelligence from 2009-2012, and since 2013 has chaired the PAMI TC. He is also the president of the nonprofit Computer Vision Foundation. He is a fellow of the ACM and the IEEE.</p>
+    </br>
+
+    <div class="container">
+        <div class="overview">
+            <h1>3.LOGISTICS</h1>            
+            <ul>
+                <li>Preference for half-day or full-day event:<strong> Full-day event</strong></li>
+                <li>Estimated numbers of orals, posters, and invited talks, with rough program outline</li>
+                <ul>
+                    <li>6 invited talks, 9 oral presentation, 9 posters, 6 panelists</li>
+                    </br>
+                    <p>8:50-9:00 Welcome by organizers</p>
+                    <p>9:00-9:30 Invited talk: <strong>Prof. Philip Torr (Oxford University)</strong></p>
+                    <p>9:30-10:00 Invited talk:  <strong>Prof. Nic Lane (Oxford University)</strong></p>
+                    </br>
+                    <p>10:00-10:30 Café break</p>
+                    </br>
+                    <p>10:30-10:40 Submitted paper presentation</p>
+                    <p>10:40-10:50 Submitted paper presentation</p>
+                    <p>10:50-11:00 Submitted paper presentation</p>
+                    </br>
+                    <p>11:00-11:30 Keynote talk: <strong>Prof. Song Han (MIT)</strong></p>
+                    <p>11:30-12:00 Invited talk: <strong>Prof. Diana Marculescu (CMU)</strong></p>
+                    <p>12:00-12:10 Submitted paper presentation</p>
+                    <p>12:10-12:20 Submitted paper presentation</p>
+                    <p>12:20-12:30 Submitted paper presentation</p>
+                    </br>
+                    <p>12:30-13:30 Lunch break</p>
+                    </br>
+                    <p>13:30-14:00 Keynote talk: <strong>Prof. Bill Dally (Stanford)</strong></p>
+                    <p>14:00-14:30 Invited talk: <strong>Prof. Chelsea Finn (Stanford)</strong></p>
+                    <p>14:30-14:40 Submitted paper presentation</p>
+                    <p>14:40-14:50 Submitted paper presentation</p>
+                    <p>14:50-15:00 Submitted paper presentation</p>
+                    </br>
+                    <p>15:00-16:00 <strong>Poster session</strong> by paper submission</p>
+                    </br>
+                    <p>16:00-17:30 <strong>Panel presentations</strong> and discussion on Efficient deep learning algorithms. <strong>Moderator: Luc Van Gool</strong></p>
+                    <p>17:30-17:45 Closing awards for <strong>best paper and best poster</strong></p>
+                    </br>
+                </ul>
+                <li>Expected number of paper submissions: Expected more than 50 papers submitted</li>
+                <li>Tentative program committee</li>
+                <ul>
+                    <li>Amir Hossein Ashouri, University of Toronto </li>
+                    <li>Martin Winter, JOANNEUM RESEARCH</li>
+                    <li>Zornitsa Kozareva, Google</li>
+                    <li>Raphael Tang, University of Waterloo</li>
+                    <li>Xiaofan Xu, Intel</li>
+                    <li>Ting Chen, University of California, Los Angeles</li>
+                    <li>Zenglin Xu, University of Science and Technology of China</li>
+                    <li>Diana Marculescu, Carnegie Mellon University</li>
+                    <li>Lixin Fan, JD</li>
+                    <li>Tinghuai Wang, Nokia</li>
+                    <li>Naiyan Wang, The Hong Kong University of Science and Technology Zhendong Zhang, Xidian University</li>
+                    <li>Hsin-Pai Cheng, Duke University</li>
+                    <li>Keiji Yanai, The University of Electro-Communications</li>
+                    <li>Peter M. Roth, Graz University of Technology</li>
+                    <li>Haoji Hu, Zhejiang University</li>
+                    <li>Yurong Chen, Intel</li>
+                    <li>Francesco Cricri, Nokia Technologies</li>
+                    <li>Yoojin Choi, Samsung Electronics</li>
+                    <li>Brian Kulis, Boston University</li>
+                    <li>Elliot Crowley, The University of Edinburgh</li>
+                    <li>Navneet Dalal, Flutter, USA</li>
+                    <li>Svetlana Lazebnik, Illinois, USA</li>
+                    <li>Guoying Zhao, University of Oulu, Finland</li>
+                    <li>Krystian Mikolajczyk, Imperial College London, UK</li>
+                    <li>Xiaogang Wang, Chinese University of HongKong, China</li>
+                    <li>Xiaoyang Tan, Nanjing, China</li>
+                    <li>Bill Triggs, INRIA, France</li>
+                    <li>Lei Zhang, Hong Kong Polytechnic University, China</li>
+                    <li>Zhen Lei, Chinese Academy of Sciences, China</li>
+                    <li>Bolei Zhou, MIT, USA</li>
+                    <li>Liang Wang, Chinese Academy of Sciences, China </li>
+                    <li>Jianxin Wu, Nanjing University, China</li>
+                    <li>Jakob Verbeek, INRIA, France </li>
+                    <li>Tinne Tyutelaars, KU Leuven</li>
+                    <li>Weisheng Dong, Xidian University, China</li>
+                    <li>Xilin Chen, Chinese Academy of Sciences, China</li>
+                    <li>Ross Girshick, Facebook AI Research, USA</li>
+                    <li>Jingdong Wang, Microsoft Research Asia, China</li>
+                    <li>Paul Fieguth, University of Waterloo, Canada</li>
+                    <li>Dacheng Tao, University of Technology Sydney, Australia</li>
+                    <li>Liang Zheng, Singapore University of Technology and Design, Singapore</li>
+                    <li>Chunhua Shen, University of Adelaide, Australia</li>
+                    <li>Xiaopeng Hong, Xi'an Jiaotong University, China</li>
+                    <li>Miguel Bordallo, VTT Technical Research Centre, Finland</li>
+                    <li>Jian Li, National University of Defense Technology, China</li>
+                    <li>Jiashi Feng, National University of Singapore, Singapore</li>
+                    <li>Qixiang Ye, University of the Chinese Academy of Sciences, China</li>
+                </ul>
+                <li>Expected audience from academia working on model compression, deep learning</li>
+                <li>No special space or equipment requests.</li>
+                <li>We are planning to run best poster award and best paper competition.</li>
+            </ul>
+        </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="overview">
-      <p><strong>(2) Doctor Jifeng Dai (</strong><i>Email:</i> <strong>daijifeng@sensetime.com)</strong></p>
-      <p> Title: Deep Feature Flow for High Performance Video Recognition <p>
-    <p>Abstract: Recent years have witnessed significant success of deep convolutional neutral networks (CNNs) for image recognition. With their success, the recognition tasks have been extended from image domain to video domain, such as video semantic segmentation, and video object detection. Fast and accurate video recognition is crucial for high-value scenarios, e.g., autonomous driving and video surveillance. Nevertheless, applying existing image recognition networks on individual video frames not only introduces unaffordable computational cost for most applications, but also suffers from deteriorated object appearances in videos, such as motion blur, video defocus, rare poses, etc. <br> 
-It is widely recognized that image content varies slowly over video frames, especially the high level semantics. We developed a principled approach, called Deep Feature Flow, to exploit such data redundancy and continuity. In it, end-to-end trainable motion estimation module is built into the network architecture, so as to align features across multiple frames. Deep feature flow can effectively reduce the computational overhead and improve the recognition accuracy on videos. This talk would cover our series of efforts towards this direction.</p>
+    <div class="container">
+        <div class="overview">
+            <h1>4.IMPORTANT DATES</h1>
+            <ul>
+                <li>Workshop paper submission deadline: March 8, 2020 pst</li>
+                <li>Notification to authors: April 1, 2020 pst</li>
+                <li>Camera ready deadline: April 10, 2020 pst</li>
+            </ul>
+        </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="overview">
-      <p><strong>(3) Professor Liang Wang (</strong><i>Email:</i> <strong>wangliang@nlpr.ia.ac.cn)</strong></p>
-    <p>Liang Wang received the PhD degree in Pattern Recognition and Intelligent System from the National Laboratory of Pattern Recognition (NLPR), Institute of Automation, Chinese Academy of Sciences (CAS), China, in 2004. After graduation, he has worked as a Research Assistant at the Imperial College London, United Kingdom and Monash University, Australia, and a Research Fellow at the University of Melbourne, Australia, respectively. Before he returned back to China, he was a Lecturer with the Department of Computer Science, University of Bath, United Kingdom. Currently, he is a Professor of Hundred Talents Program of CAS at the Institute of Automation, Chinese Academy of Sciences, P. R. China. His major research interests include machine learning, pattern recognition, computer vision, multimedia processing, and data mining.</p>
+    </br>
+
+    <div class="containersmall">
+        <p>Please contact <a href="li.liu@oulu.fi">Li Liu</a> if you have question. The webpage template is by the courtesy of awesome <a href="https://gkioxari.github.io/">Georgia</a>.</p>
     </div>
-</div>
 
-<br>
-
-<div class="container">
-  <h2>Program outline</h2>
-  <table border="2" align="center">
-    <tr>
-      <td width="200"><htable>Time</htable></td> <td width="400"><htable>Event</htable></td>
-    </tr>
-    <tr>
-      <td><strong>8:55~9:00</strong></td><td>Welcome Introduction</td>
-    </tr>
-    <tr>
-      <td><strong>9:00~9:45</strong></td><td><strong>Invited Talk (Ramin Zabih)</strong></td>
-    </tr>
-    <tr>
-      <td><strong>9:50~10:35</strong></td><td><strong>Invited Talk (Jifeng Dai)</strong></td>
-    </tr>
-    <tr>
-      <td><strong>10:35~11:15</strong></td><td><strong>Oral Session (2 presentaions: 20min each)</strong></td>
-    </tr>
-    <tr>
-      <td><strong>11:15~11:30</strong></td><td>Coffee break</td>
-    </tr>
-    <tr>
-      <td><strong>11:30~12:10</strong></td><td><strong>Oral Session (2 presentations: 20min each)</strong></td>
-    </tr>
-    <tr>
-      <td><strong>12:10~14:15</strong></td><td>Lunch</td>
-    </tr>
-    <tr>
-      <td><strong>14:15~15:00</strong></td><td><strong>Invited Talk (Liang Wang)</strong></td>
-    </tr>
-    <tr>
-      <td><strong>15:00~16:00</strong></td><td><strong>Poster Session</strong></td>
-    </tr>
-    <tr>
-      <td><strong>16:00~17:00</strong></td><td><strong>Oral Session (3 presentations: 20min each)</strong></td>
-    </tr>
-    <tr>
-      <td><strong>17:00~17:15</strong></td><td>Closing Remarks</td>
-    </tr>
-  </table>
-  <p></p>
-  <p></p>
-</div>
-
-<br>
-
-<div class="container" text-align="left">
-  <h3>Oral Session 1 (10:35~11:15)</h3>
-    <div class="topic">
-      <ul> 
-        <li><strong>Embarrassingly Simple Binary Representation Learning</strong>, Yuming Shen, Jie Qin, Jiaxin Chen, Li Liu, Fan Zhu</li>
-        <li><strong>MuffNet: Multi-Layer Feature Federation for Mobile Deep Learning</strong>, Hesen Chen, Ming Lin, Xiuyu Sun, Hao Li, Rong Jin</li>
-      </ul>
-    </div>
-    <br>
-  <h3>Oral Session 2 (11:30~12:10)</h3>
-    <div class="topic">
-      <ul>
-        <li><strong>Augmentation Invariant Training</strong>, Weicong Chen, Lu Tian, Liwen Fan, Yu Wang</li>
-        <li><strong>VACL: Variance Aware Cross Layer Regularization for Deep Residual Network Pruning</strong>, Shuang Gao, Xin Liu, LUNG-SHENG CHIEN, William Zhang, Jose M. Alvarez</li>
-      </ul>
-    </div>
-    <br>
-  <h3>Oral Session 3 (16:00~17:00)</h3>
-    <div class="topic">
-      <ul>
-        <li><strong>Low-bit Quantization of Neural Networks for Efficient Inference</strong> <a href="CEFRLatICCV2019/iccv/ICCV_CEFRL_Low-bit_Quantization_of_Neural_Networks_for_Efficient_Inferen_.pdf">(slides)</a>, Yoni Choukroun, Eli Kravchik, Fan Yang, Pavel Kisilev</li>
-        <li><strong>Sparse Generative Adversarial Network</strong> <a href="CEFRLatICCV2019/iccv/ICCV_Workshop_slides.pdf">(slides)</a>, Shahin Mahdizadehaghdam, Ashkan Panahi, Hamid Krim</li>
-        <li><strong>Efficient Learning on Point Clouds with Basis Point Sets</strong> <a href="CEFRLatICCV2019/iccv/Efficient_Learning_On_Point_Clouds_with_Basis_Point_Sets.pptx">(slides)</a>, Sergey Prokudin, Christoph Lassner, Javier Romero</li>
-      </ul>
-    </div>
-    <br>
-  <h3>Poster Session (15:00~16:00)</h3>
-    <div class="topic">
-      <ul>
-        <li>(Poster Stand ID: 1) <strong>Embarrassingly Simple Binary Representation Learning</strong>, Yuming Shen, Jie Qin, Jiaxin Chen, Li Liu, Fan Zhu</li>
-        <li>(Poster Stand ID: 2) <strong>Unsupervised Extraction of Local Image Descriptors via Relative Distance Ranking Loss</strong>, Xin Yu, Yurun Tian, Fatih Porikli, Richard Hartley, Hongdong Li, Huub Heijnen, Vassileios Balntas</li>
-        <li>(Poster Stand ID: 3) <strong>Metric-based Regularization and Temporal Ensemble for Multi-task Learning using Heterogeneous Unsupervised Tasks</strong>, Daeha Kim, Seunghyun Lee, Byung Cheol Song</li>
-        <li>(Poster Stand ID: 4) <strong>DAME WEB: DynAmic MEan with Whitening Ensemble Binarization for Landmark Retrieval without Human Annotation</strong>, Tsun-Yi Yang, Duy Kien Nguyen, Huub Heijnen, Vassileios Balntas</li>
-        <li>(Poster Stand ID: 5) <strong>More About Covariance Descriptors for Image Set Coding: Log-Euclidean Framework based Kernel Matrix Representation</strong>, Kai-Xuan Chen, Xiao-Jun Wu, Jieyi Ren, Rui Wang, Josef Kittler</li>
-        <li>(Poster Stand ID: 6) <strong>Compact and Efficient Multitask Learning in Vision</strong>, Language and Speech, Mohammed Al-Rawi, Ernest Valveny</li>
-        <li>(Poster Stand ID: 7) <strong>MuffNet: Multi-Layer Feature Federation for Mobile Deep Learning</strong>, Hesen Chen, Ming Lin, Xiuyu Sun, Hao Li, Rong Jin</li>
-        <li>(Poster Stand ID: 8) <strong>Beyond Attributes: High-order Attribute Features for Zero-shot Learning</strong>, Xiao-Bo Jin, Guo-Sen Xie, Kaizhu Huang, Jianyu Miao, Qiufeng Wang</li>
-        <li>(Poster Stand ID: 9) <strong>Augmentation Invariant Training</strong>, Weicong Chen, Lu Tian, Liwen Fan, Yu Wang</li>
-        <li>(Poster Stand ID: 10) <strong>VACL: Variance Aware Cross Layer Regularization for Deep Residual Network Pruning</strong>, Shuang Gao, Xin Liu, LUNG-SHENG CHIEN, William Zhang, Jose M. Alvarez</li>
-        <li>(Poster Stand ID: 11) <strong>Event-based incremental broad learning system for object classification</strong>, Shan Gao, Guangqian Guo, C. L. Philip Chen</li>
-        <li>(Poster Stand ID: 12) <strong>Differential-Evolution-Based Generative Adversarial Networks for Edge Detection</strong>, Wenbo Zheng</li>
-        <li>(Poster Stand ID: 13) <strong>Low-bit Quantization of Neural Networks for Efficient Inference</strong>, Yoni Choukroun, Eli Kravchik, Fan Yang, Pavel Kisilev</li>
-        <li>(Poster Stand ID: 14) <strong>Self-supervised learning of class embeddings from video</strong>, Olivia Wiles, A S Koepke, Andrew Zisserman</li>
-        <li>(Poster Stand ID: 15) <strong>Deep Total Variation Support Vector Networks</strong>, Hichem Sahbi</li>
-        <li>(Poster Stand ID: 16) <strong>Age Estimation From Facial Parts Using Compact Multi-Stream Convolutional Neural Networks</strong>, Marcus A Angeloni, Rodrigo de Freitas Pereira, Helio Pedrini</li>
-        <li>(Poster Stand ID: 17) <strong>Dynamic Block Sparse Reparametarization of Convolutional Neural Networks</strong>, Dharma Teja Vooturi</li>
-        <li>(Poster Stand ID: 18) <strong>DHA: Supervised Deep Learning to Hash with an Adaptive Loss Function</strong>, Jiehao Xu, Qingjie Liu, Jie Qin, Yunhong Wang</li>
-        <li>(Poster Stand ID: 19) <strong>Sparse Generative Adversarial Network</strong>, Shahin Mahdizadehaghdam, Ashkan Panahi, Hamid Krim</li>
-        <li>(Poster Stand ID: 20) <strong>Efficient Learning on Point Clouds with Basis Point Sets</strong>, Sergey Prokudin, ChristophLassner, Javier Romero</li>
-        <li>(Poster Stand ID: 21) <strong>Large Scale Near-duplicate Image Retrieval via Patch Embedding</strong>, Shangpeng Yan, Wenbo Bao, Xiaoyun Zhang, Zhiyong Gao, Li Chen</li>
-      </ul>
-    </div>
-</div>
-
-
-</br>
-
-<div class="container" text-align="left">
-  <h2>Paper Submission Information</h2>
-    <div class="topic">
-      <p>All submissions will be handled electronically via the workshop’s CMT Website. Click the following link to go to the submission site: <a href="https://cmt3.research.microsoft.com/CEFRL42019">https://cmt3.research.microsoft.com/CEFRL42019</a>.
-      <p>Papers should describe original and unpublished work about the related topics. Each paper will receive double blind reviews, moderated by the workshop chairs. Authors should take into account the following:</p> 
-      <p>The authors will submit full length papers (ICCV format) online, including:</p>
-      <p>(1) Title of paper and short abstract summarizing the main contribution,</p> 
-      <p>(2) Names and contact info of all authors, also specifying the contact author,</p> 
-      <p>(3) Contributions must be written and presented in English and</p> 
-      <p>(4) The paper in PDF format.</p> 
-      <p>All submissions will be peer-reviewed by at least 3 members of the program committee.</p>  
-      <br>
-      <p><font color='red'><strong>Poster guideline:</strong></font> The dimension of poster panels is 1950mm (width) x 950mm (height). It is the same as that of the <a target="_blank", href="http://iccv2019.thecvf.com/submission/presentation">main conference.</a></p>
-    </div>
-</div>
-
-</br>
-
-<div class="container">
-  <h2>Organizers</h2>
-  <table align="center">
-    <tr>
-    <td width="230">
-      <div class="instructor">
-          <a href="http://www.ee.oulu.fi/~lili/LiLiuHomepage.html">
-        <div class="instructorphoto"><img width="200" src="EDLCVatCVPR2020/figures/li.png"></div>
-        <div>Dr. Li Liu</div>
-        </a>
-        <div>(University of Oulu & NUDT)</div>
-      </div>
-    </td>
-
-    <td width="230">
-      <div class="instructor">
-          <a href="http://homes.esat.kuleuven.be/~yliu/">
-        <div class="instructorphoto"><img width="200" src="EDLCVatCVPR2020/figures/yuliu.png"></div>
-        <div>Dr. Yu Liu</div>
-        </a>
-        <div>(PSI group of KU Leuven)</div>
-      </div>
-    </td>
-
-    <td width="230">
-      <div class="instructor">
-          <a href="https://scholar.google.com/citations?user=pw_0Z_UAAAAJ&hl=zh-CN">
-        <div class="instructorphoto"><img width="200" src="EDLCVatCVPR2020/figures/wanli.png"></div>
-        <div>Dr. Wanli Ouyang</div>
-        </a>
-        <div>(Univeristy of Sydney)</div>
-      </div>
-    </td>
-    </tr>
-
-    <tr>
-      <td>
-      <div class="instructor">
-          <a href="https://scholar.google.com/citations?user=TN8uDQoAAAAJ&hl=zh-CN">
-        <div class="instructorphoto"><img width="200" src="EDLCVatCVPR2020/figures/jiwen.png"></div>
-        <div>Dr. Jiwen Lu</div>
-        </a>
-        <div>(Tsinghua University)</div>
-      </div>
-    </td>
-
-    <td>
-      <div class="instructor">
-          <a href="https://scholar.google.com/citations?user=bjEpXBoAAAAJ&hl=zh-CN">
-        <div class="instructorphoto"><img width="200" src="EDLCVatCVPR2020/figures/matti.png"></div>
-        <div>Prof. Matti Pietikäinen</div>
-        </a>
-        <div>(University of Oulu)</div>
-      </div>
-    </td>
-
-    <td>
-      <div class="instructor">
-          <a href="https://scholar.google.com/citations?user=TwMib_QAAAAJ&hl=zh-CN">
-        <div class="instructorphoto"><img width="200" src="EDLCVatCVPR2020/figures/luc.png"></div>
-        <div>Prof. Luc Van Gool</div>
-        </a>
-        <div>(ETH Zurich)</div>
-      </div>
-    </td>
-
-  </tr>
-</table>
-</div>   
-
-<br>
-
-<div class="container">
-  <h2>Previous CEFRL Workshop</h2>
-    <div class="history">
-      <h4>
-        <p>· <a href="http://www.ee.oulu.fi/~lili/CEFRLatCVPR2019.html">3<sup>rd</sup> CEFRL Workshop in conjunction with CVPR 2019</a></p>
-        <p>· <a href="https://cefrl.webflow.io/">2<sup>nd</sup> CEFRL Workshop in conjunction with ECCV 2018</a></p>
-        <p>· <a href="http://www.ee.oulu.fi/~lili/ICCVW2017.html">1<sup>st</sup> CEFRL Workshop in conjunction with ICCV 2017</a></p>
-      </h4>
-    </div>
-</div>
-
-</br>
-
-<div class="containersmall">
-    <p>Please contact <a href="li.liu@oulu.fi">Li Liu</a> if you have question. The webpage template is by the courtesy of awesome <a href="https://gkioxari.github.io/">Georgia</a>.</p>
-</div>
- 
-<!--<p align="center" class="acknowledgement">Last updated: Jan. 6, 2017</p>-->
+    <!--<p align="center" class="acknowledgement">Last updated: Jan. 6, 2017</p>-->
 </body>
 </html>
