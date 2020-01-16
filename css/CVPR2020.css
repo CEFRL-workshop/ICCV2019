@@ -2944,5 +2944,8 @@ html.w-mod-js *[data-ix="fade-in-on-scroll"] {
   }
 }
 .newfont{
-	color: #FFFFFF
+	color: #FFFFFF;
+}
+.newfontsize{
+	font-size: 20px;
 }
